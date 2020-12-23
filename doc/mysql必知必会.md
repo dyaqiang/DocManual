@@ -607,19 +607,47 @@ create view user_v1   as  select name  from user ; //创建后下面再用，把
 
 #### 20.3 执行存储过程
 
+EX ECUTE  、
+
 #### 20.4 创建存储过程
 
 ## 第二十一章、事物
 
 #### 21.1 事物处理
 
+1、成批的sql操作要么完全执行，要么完全不执行
+
+2、事物、回退、提交、保留点
+
 #### 21.2 控制事物的处理
+
+````sql
+begin  transaction   
+commit trancsaction 
+savepoint delete1
+rollback delete1
+````
 
 ## 第二十三章 、使用游标
 
 #### 23.1 游标
 
+1、检索出来的结果集中 前进或者后退一行。
+
 #### 23.2 使用游标
+
+```
+//创建游标
+declare cust cursor
+//使用游标
+open cursor cust 
+//移动游标
+fetch cursor 
+//关闭游标
+close cust
+```
+
+
 
 ## 第二十四章、高级SQL
 
@@ -627,15 +655,52 @@ create view user_v1   as  select name  from user ; //创建后下面再用，把
 
 ##### 24.1.1主建
 
+~~~~sql
+create table user(
+id int(10) not null primary key,
+name varchar(255) null,
+)
+~~~~
+
 ##### 24.1.2 外建
+
+```sql
+create table user(
+id int(10) not null primary key,
+name varchar(255) null,
+uid int(10) not null references
+)
+```
 
 ##### 24.1.3 唯一约束
 
+```sql
+create table user(
+id int(10) not null primary key,
+name varchar(255) null,
+uid int(10) not null union
+)
+```
+
+
+
 ##### 24.1.4 检查约束
+
+```sql
+create table user(
+id int(10) not null primary key,
+name varchar(255) null,
+uid int(10) not null check (uid > 0)
+)
+```
 
 #### 24.2 索引
 
+==十分重要：详见mysql的高性能==
+
 #### 24.3 触发器
+
+在insert 或者update操作的时候 进行关联执行。
 
 #### 24.4 数据库安全
 

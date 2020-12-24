@@ -67,7 +67,7 @@ class ObjArray implements \ArrayAccess
     public function offsetGet($offset)
     {
         echo "offsetGet" . $offset;
-        return $this->testDate[$offset];
+        retu1rn $this->testDate[$offset];
     }
 
     //设置

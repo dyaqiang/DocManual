@@ -252,3 +252,29 @@ select * from student limit 1，5;
 
 ##### 8、带搜索条件的查询
 
+```mysql
+=
+between and
+in
+not in
+# 匹配NULL值
+IS NULL
+IS NOT NULL
+
+#多条件
+and
+or
+
+#通配符
+like 
+not like
+```
+
+##### 9、表达式和函数
+
+```
+
+```
+
+
+

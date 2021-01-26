@@ -278,3 +278,54 @@ not like
 
 
 
+##### 10、分组查询
+
+```mysql
+#分组
+select  oaid ,AVG(oaid) from shebei  group by cdid;
+#where分组
+select AVG(oaid) from shebei where oaid>1 group by cdid;
+#having
+select AVG(oaid) from shebei  group by cdid having AVG(oaid)>2;
+#分组+排序
+select AVG(oaid) as avgs from shebei  group by cdid having AVG(oaid)>2 order by avgs desc;
+#顺序
+SELECT [DISTINCT] 查询列表
+[FROM 表名]
+[WHERE 布尔表达式]
+[GROUP BY 分组列表 ]
+[HAVING 分组过滤条件]
+[ORDER BY 排序列表]
+[LIMIT 开始行, 限制条数]
+```
+
+
+
+##### 11、子查询
+
+```mysql
+多表查询，一般能不搞就不搞 否则效率不高。
+```
+
+##### 12、组合查询
+
+##### 13、数据插入更新
+
+##### 14、视图
+
+简单理解是查询语句的别名
+
+##### 15、自定义变量
+
+##### 16、存储过程 
+
+简单理解就是对一系列函数的操作的集合
+
+##### 17、游标
+
+使用游标查询我们所在记录的行
+
+##### 18、触发器
+
+我们在对表中的记录做增、删、改操作前和后都可能需要让`MySQL`服务器自动执行一些额外的语句，这个就是所谓的`触发器`的应用场景。
+
